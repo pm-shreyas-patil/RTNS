@@ -1,0 +1,9 @@
+{
+	"name":"RTNS",
+	"private":"true",
+	"dependencies":{
+		"socket.io":"1.3.2",
+		"express":"4.11.1",
+		"mysql":"2.5.4"
+	}
+}

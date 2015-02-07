@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<style>
+			#chat{
+				height:200px;
+			}
+		</style>
+		<script src="/socket.io/socket.io.js"/></script>
+	</head>
+	<body>
+		<div id="chat">
+			<script>
+				var s1= io.connect({'force new connection':true});
+				s1.emit('handshake-request',{"uid":1234,"utype":5,"notificationId":2,"wtype":"Hello World Again"});
+				s1.on('data',function(data){ console.log(data['title'])});
+			</script>
+		</div>
+		<script>
+			var socket = io.connect({'force new connection':true});
+			socket.emit('handshake-request',{"uid":1234,"utype":5,"notificationId":1,"wtype":"Hello World"});
+			socket.on('data',function(data){ console.log(data)});
+		</script>
+	</body>
+</html>
